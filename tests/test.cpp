@@ -2,6 +2,8 @@
 
 #include <gtest/gtest.h>
 
+using std::ostream;
+
 class Summa {
 public:
     int rez;
