@@ -23,7 +23,6 @@ TEST(Example, EmptyTest) {
 }
 
 int main() {
-
     stack<int> my_stack;
     //Попробовать заменить на шаблон int
 
@@ -54,20 +53,36 @@ int main() {
 
     cout << "value from head     " << my_stack.head() << endl;
 
-    cout << " ---------------------------------------------------------------------POP" << endl;
+    cout << " -------------------------------------------------POP" << endl;
 
     my_stack.pop();
     my_stack.pop();
     my_stack.pop();
     my_stack.pop();
     my_stack.pop();
-    cout << "value from head     " << my_stack.head() << endl;
-//    my_stack.pop();
-//    my_stack.pop();
-//    my_stack.pop();
-//    my_stack.pop();
-//    my_stack.pop();
+    my_stack.pop();
+    my_stack.pop();
+    my_stack.pop();
+    my_stack.pop();
 
+    cout « " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Zad2" « endl;
+
+    stack2<Summa> my_stack2;
+
+    my_stack2.push_emplace(123, 1, 1);
+    my_stack2.push_emplace(321, 1, 1);
+    my_stack2.push_emplace(101, 1, 1);
+
+    Summa test_pop(1,2,3);
+    my_stack2.push(std::move(test_pop));
+
+    test_pop = my_stack2.pop();
+
+    cout « " value after pop() = " « test_pop « endl;
+
+    my_stack2.pop();
+    my_stack2.pop();
+    my_stack2.pop();
 
     return 0;
 }
