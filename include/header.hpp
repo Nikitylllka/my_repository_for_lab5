@@ -41,7 +41,7 @@ public:
 
     void push(T &&value) {
         if (i < 10) {
-            Head =static_cast<T *>(realloc(Head, (i + 1) * sizeof(T)));
+            Head = static_cast<T *>(realloc(Head, (i + 1) * sizeof(T)));
             if (!Head)
             {
                 exit(error_of_memory);
@@ -105,7 +105,8 @@ public:
             cout << "last elem from Head : [" << (i - 2) << "] = " <<
             Head[i - 2] << endl;
 
-            cout << "last elem             [" << (i - 2) << "] = " << *Top << endl;
+            cout << "last elem             [" << (i - 2) << "] = "
+            << *Top << endl;
             i--;
         }
     }
@@ -124,7 +125,7 @@ public:
     }
 
     void push(T &&value) {
-        Head =static_cast<T *>(realloc(Head, (i + 1) * sizeof(T)));
+        Head = static_cast<T *>(realloc(Head, (i + 1) * sizeof(T)));
         if (!Head)
         {
             exit(error_of_memory);
