@@ -9,6 +9,9 @@
 #define error_of_empty_stack -1
 #define error_of_memory -2
 
+using std::cout;
+using std::endl;
+
 template<typename T>
 class stack2 {
 public:
@@ -31,8 +34,8 @@ public:
         }
         Top = &(Head)[i];
         Head[i] = obj;
-        using std::cout << "from Head : [" << (i) << "] = " << Head[i] << using std::endl;
-        using std::cout << "            [" << (i) << "] = " << *Top << using std::endl;
+        cout << "from Head : [" << (i) << "] = " << Head[i] << endl;
+        cout << "            [" << (i) << "] = " << *Top << endl;
         i++;
     };
 
@@ -45,12 +48,12 @@ public:
             }
             Top = &(Head)[i];
             Head[i] = value;
-            using std::cout << "from Head : [" << (i) << "] = " << Head[i] << using std::endl;
-            using std::cout << "            [" << (i) << "] = " << *Top << using std::endl;
+            cout << "from Head : [" << (i) << "] = " << Head[i] << endl;
+            cout << "            [" << (i) << "] = " << *Top << endl;
             i++;
 
         } else {
-            using std::cout << "Stack is overflow" << using std::endl;
+            cout << "Stack is overflow" << endl;
         }
     };
 
@@ -70,18 +73,18 @@ public:
             if (i == 1) {
                 Head = nullptr;
                 Top = nullptr;
-                using std::cout << "Stack is empty" << using std::endl;
+                cout << "Stack is empty" << endl;
                 i--;
                 return value_after_pop;
             }
             Top = &(Head)[i - 2];
-            using std::cout << "last elem from Head : [" << (i - 2) << "] = " << Head[i - 2] << using std::endl;
+            cout << "last elem from Head : [" << (i - 2) << "] = " << Head[i - 2] << endl;
 
-            using std::cout << "last elem             [" << (i - 2) << "] = " << *Top << using std::endl;
+            cout << "last elem             [" << (i - 2) << "] = " << *Top << endl;
             i--;
             return value_after_pop;
         } else if (i < 1) {
-            using std::cout << "Error stack" << using std::endl;
+            cout << "Error stack" << endl;
             exit(error_of_empty_stack);
         }
     };
@@ -92,14 +95,14 @@ public:
             if (i == 1) {
                 Head = nullptr;
                 Top = nullptr;
-                using std::cout << "Stack is empty" << using std::endl;
+                cout << "Stack is empty" << endl;
                 i--;
                 return;
             }
             Top = &(Head)[i - 2];
-            using std::cout << "last elem from Head : [" << (i - 2) << "] = " << Head[i - 2] << using std::endl;
+            cout << "last elem from Head : [" << (i - 2) << "] = " << Head[i - 2] << endl;
 
-            using std::cout << "last elem             [" << (i - 2) << "] = " << *Top << using std::endl;
+            cout << "last elem             [" << (i - 2) << "] = " << *Top << endl;
             i--;
         }
     };
@@ -126,8 +129,8 @@ public:
         }
         Top = &(Head)[i];
         Head[i] = value;
-        using std::cout << "from Head : [" << (i) << "] = " << Head[i] << using std::endl;
-        using std::cout << "            [" << (i) << "] = " << *Top << using std::endl;
+        cout << "from Head : [" << (i) << "] = " << Head[i] << endl;
+        cout << "            [" << (i) << "] = " << *Top << endl;
         i++;
     };
 
@@ -139,8 +142,8 @@ public:
         }
         Top = &(Head)[i];
         Head[i] = value;
-        using std::cout << "from Head : [" << (i) << "] = " << Head[i] << using std::endl;
-        using std::cout << "            [" << (i) << "] = " << *Top << using std::endl;
+        cout << "from Head : [" << (i) << "] = " << Head[i] << endl;
+        cout << "            [" << (i) << "] = " << *Top << endl;
         i++;
     };
 
@@ -150,23 +153,23 @@ public:
             if (i == 1) {
                 Head = nullptr;
                 Top = nullptr;
-                using std::cout << "Stack is empty" << using std::endl;
+                cout << "Stack is empty" << endl;
                 i--;
                 return;
             }
             Top = &(Head)[i - 2];
-            using std::cout << "last elem from Head : [" << (i - 2) << "] = " << Head[i - 2] << using std::endl;
+            cout << "last elem from Head : [" << (i - 2) << "] = " << Head[i - 2] << endl;
 
-            using std::cout << "last elem             [" << (i - 2) << "] = " << *Top << using std::endl;
+            cout << "last elem             [" << (i - 2) << "] = " << *Top << endl;
             i--;
         } else if (i < 1) {
-            using std::cout << "Error stack" << using std::endl;
+            cout << "Error stack" << endl;
         }
     };
 
     const T &head() const {
         if (i == 0) {
-            using std::cout << "stack is empty ";
+            cout << "stack is empty ";
             exit(error_of_empty_stack);
         }
         return *Top;
@@ -183,9 +186,9 @@ public:
                 return;
             }
             Top = &(Head)[i - 2];
-            using std::cout << "last elem from Head : [" << (i - 2) << "] = " << Head[i - 2] << using std::endl;
+            cout << "last elem from Head : [" << (i - 2) << "] = " << Head[i - 2] << endl;
 
-            using std::cout << "last elem             [" << (i - 2) << "] = " << *Top << using std::endl;
+            cout << "last elem             [" << (i - 2) << "] = " << *Top << endl;
             i--;
         }
     };
