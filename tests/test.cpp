@@ -73,7 +73,7 @@ int main() {
     my_stack2.push_emplace(321, 1, 1);
     my_stack2.push_emplace(101, 1, 1);
 
-    Summa test_pop(1,2,3);
+    Summa test_pop(1, 2, 3);
     my_stack2.push(std::move(test_pop));
 
     test_pop = my_stack2.pop();
