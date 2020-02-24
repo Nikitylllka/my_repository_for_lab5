@@ -27,8 +27,8 @@ public:
     template<typename ... Args>
     void push_emplace(Args &&... value) {
         T obj(value ...);
-        Head = (T *) realloc(Head, (i + 1) * sizeof(obj));
-        if(!Head)
+        Head = static_cast<T *>(realloc(Head, (i + 1) * sizeof(obj)));
+        if (!Head)
         {
             exit(error_of_memory);
         }
@@ -37,12 +37,12 @@ public:
         cout << "from Head : [" << (i) << "] = " << Head[i] << endl;
         cout << "            [" << (i) << "] = " << *Top << endl;
         i++;
-    };
+    }
 
     void push(T &&value) {
         if (i < 10) {
-            Head = (T *) realloc(Head, (i + 1) * sizeof(T));
-            if(!Head)
+            Head =static_cast<T *>(realloc(Head, (i + 1) * sizeof(T)));
+            if (!Head)
             {
                 exit(error_of_memory);
             }
@@ -55,7 +55,7 @@ public:
         } else {
             cout << "Stack is overflow" << endl;
         }
-    };
+    }
 
     const T &head() const {
         if (i == 0) {
@@ -69,7 +69,7 @@ public:
         if (i > 0) {
             T value_after_pop;
             value_after_pop = Head[i - 1];
-            Head = (T *) realloc(Head, (i - 1) * sizeof(T));
+            Head = static_cast<T *>(realloc(Head, (i - 1) * sizeof(T)));
             if (i == 1) {
                 Head = nullptr;
                 Top = nullptr;
@@ -78,20 +78,22 @@ public:
                 return value_after_pop;
             }
             Top = &(Head)[i - 2];
-            cout << "last elem from Head : [" << (i - 2) << "] = " << Head[i - 2] << endl;
+            cout << "last elem from Head : [" << (i - 2) << "] = " <<
+            Head[i - 2] << endl;
 
-            cout << "last elem             [" << (i - 2) << "] = " << *Top << endl;
+            cout << "last elem             [" << (i - 2) << "] = " <<
+            *Top << endl;
             i--;
             return value_after_pop;
         } else if (i < 1) {
             cout << "Error stack" << endl;
             exit(error_of_empty_stack);
         }
-    };
+    }
 
     ~stack2() {
         while (i > 0) {
-            Head = (T *) realloc(Head, (i - 1) * sizeof(T));
+            Head = static_cast<T *>(realloc(Head, (i - 1) * sizeof(T)));
             if (i == 1) {
                 Head = nullptr;
                 Top = nullptr;
@@ -100,18 +102,18 @@ public:
                 return;
             }
             Top = &(Head)[i - 2];
-            cout << "last elem from Head : [" << (i - 2) << "] = " << Head[i - 2] << endl;
+            cout << "last elem from Head : [" << (i - 2) << "] = " <<
+            Head[i - 2] << endl;
 
             cout << "last elem             [" << (i - 2) << "] = " << *Top << endl;
             i--;
         }
-    };
+    }
 };
 
 template<typename T>
 class stack {
 public:
-
     T *Head;
     T *Top;
     int i = 0;
@@ -122,8 +124,8 @@ public:
     }
 
     void push(T &&value) {
-        Head = (T *) realloc(Head, (i + 1) * sizeof(T));
-        if(!Head)
+        Head =static_cast<T *>(realloc(Head, (i + 1) * sizeof(T)));
+        if (!Head)
         {
             exit(error_of_memory);
         }
@@ -132,11 +134,11 @@ public:
         cout << "from Head : [" << (i) << "] = " << Head[i] << endl;
         cout << "            [" << (i) << "] = " << *Top << endl;
         i++;
-    };
+    }
 
     void push(const T &value) {
-        Head = (T *) realloc(Head, (i + 1) * sizeof(T));
-        if(!Head)
+        Head = static_cast<T *>(realloc(Head, (i + 1) * sizeof(T)));
+        if (!Head)
         {
             exit(error_of_memory);
         }
@@ -145,11 +147,11 @@ public:
         cout << "from Head : [" << (i) << "] = " << Head[i] << endl;
         cout << "            [" << (i) << "] = " << *Top << endl;
         i++;
-    };
+    }
 
     void pop() {
         if (i > 0) {
-            Head = (T *) realloc(Head, (i - 1) * sizeof(T));
+            Head = static_cast<T *>(realloc(Head, (i - 1) * sizeof(T)));
             if (i == 1) {
                 Head = nullptr;
                 Top = nullptr;
@@ -158,14 +160,16 @@ public:
                 return;
             }
             Top = &(Head)[i - 2];
-            cout << "last elem from Head : [" << (i - 2) << "] = " << Head[i - 2] << endl;
+            cout << "last elem from Head : [" << (i - 2) << "] = " <<
+            Head[i - 2] << endl;
 
-            cout << "last elem             [" << (i - 2) << "] = " << *Top << endl;
+            cout << "last elem             [" << (i - 2) << "] = " <<
+            *Top << endl;
             i--;
         } else if (i < 1) {
             cout << "Error stack" << endl;
         }
-    };
+    }
 
     const T &head() const {
         if (i == 0) {
@@ -177,7 +181,7 @@ public:
 
     ~stack() {
         while (i > 0) {
-            Head = (T *) realloc(Head, (i - 1) * sizeof(T));
+            Head = static_cast<T *>(realloc(Head, (i - 1) * sizeof(T)));
             if (i == 1) {
                 Head = nullptr;
                 Top = nullptr;
@@ -186,13 +190,14 @@ public:
                 return;
             }
             Top = &(Head)[i - 2];
-            cout << "last elem from Head : [" << (i - 2) << "] = " << Head[i - 2] << endl;
+            cout << "last elem from Head : [" << (i - 2) << "] = " <<
+            Head[i - 2] << endl;
 
-            cout << "last elem             [" << (i - 2) << "] = " << *Top << endl;
+            cout << "last elem             [" << (i - 2) << "] = " <<
+            *Top << endl;
             i--;
         }
-    };
-
+    }
 };
 
-#endif // INCLUDE_HEADER_HPP
+#endif // INCLUDE_HEADER_HPP_
