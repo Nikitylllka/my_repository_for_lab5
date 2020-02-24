@@ -59,7 +59,7 @@ public:
 
     const T &head() const {
         if (i == 0) {
-            using std::cout << "stack is empty ";
+            cout << "stack is empty ";
             exit(error_of_empty_stack);
         }
         return *Top;
@@ -186,7 +186,7 @@ public:
             if (i == 1) {
                 Head = nullptr;
                 Top = nullptr;
-                using std::cout << "Stack is empty" << using std::endl;
+                cout << "Stack is empty" << endl;
                 i--;
                 return;
             }
