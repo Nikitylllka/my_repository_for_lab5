@@ -81,7 +81,7 @@ int main() {
 
     test_pop = my_stack2.pop();
 
-    cout << " value after pop() = " « test_pop << endl;
+    cout << " value after pop() = " << test_pop << endl;
 
     my_stack2.pop();
     my_stack2.pop();
