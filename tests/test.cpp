@@ -56,7 +56,7 @@ int main() {
 
     cout << "value from head     " << my_stack.head() << endl;
 
-    cout << " -------------------------------------------------POP" << endl;
+    cout << " --------------------------------------------POP" << endl;
 
     my_stack.pop();
     my_stack.pop();
@@ -68,7 +68,7 @@ int main() {
     my_stack.pop();
     my_stack.pop();
 
-    cout « " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Zad2" « endl;
+    cout << " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Zad2" << endl;
 
     stack2<Summa> my_stack2;
 
@@ -81,7 +81,7 @@ int main() {
 
     test_pop = my_stack2.pop();
 
-    cout « " value after pop() = " « test_pop « endl;
+    cout << " value after pop() = " « test_pop << endl;
 
     my_stack2.pop();
     my_stack2.pop();
