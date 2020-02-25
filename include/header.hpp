@@ -85,7 +85,7 @@ public:
             *Top << endl;
             i--;
             return value_after_pop;
-        } else if (i < 1) {
+        } else{
             cout << "Error stack" << endl;
             exit(error_of_empty_stack);
         }
